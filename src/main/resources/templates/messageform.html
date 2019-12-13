@@ -8,7 +8,6 @@
 <body>
 <div class="container">
 <h1>Message Form</h1>
-<img src="https://res.cloudinary.com/a-name-not-already-taken/image/upload/v1576179446/samples/ecommerce/leather-bag-gray.jpg">
 </div>
 <div class="container2">
     <form action="#" th:action="@{/process}" th:object="${message}" method="post">
@@ -27,6 +26,15 @@
     <input class="btn btn-success btn-lg" role="button" type="submit" value="Submit" />
 </form>
 </div>
+<br /><br />
+<h1>File Image</h1>
+<form method="POST" action="/add" th:object="${image}"
+      enctype="multipart/form-data">
+    Name: <input type="text" th:field="*{name}" />
+    Real Name: <input type="text" th:field="*{realname}" />
+    <input type="file" name="file" /><br /><br />
+    <input type="submit" value="Submit" />
+</form>
 <style>
     body {
         background-color: aquamarine;

@@ -1,12 +1,12 @@
 package com.example.demo;
 
+import com.cloudinary.utils.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.thymeleaf.util.ObjectUtils;
 
 import javax.validation.Valid;
 import java.io.IOException;
@@ -37,7 +37,7 @@ public class HomeController {
         model.addAttribute("image", new Image());
         return "messageform";
     }
-/*
+
     @PostMapping("/add")
     public String processImage(@ModelAttribute Image image,
                                @RequestParam("file")MultipartFile file){
@@ -53,8 +53,8 @@ public class HomeController {
             e.printStackTrace();
             return "redirect:/add";
         }
-    }
-*/
+     return "redirect:/" ;}
+
     @PostMapping("/process")
     public String processForm(@Valid Message message,
                               BindingResult result){

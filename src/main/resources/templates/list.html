@@ -7,8 +7,6 @@
 </head>
 <body>
 <h1>Message List</h1>
-<img src="https://res.cloudinary.com/a-name-not-already-taken/image/upload/v1576179446/samples/ecommerce/leather-bag-gray.jpg">
-
 <a class="btn btn-primary btn-lg" role="button" href="/add">Add a Message</a><br />
 <table>
     <tr>
@@ -28,6 +26,13 @@
         </td>
     </tr>
 </table>
+<a href="/add">Add an image</a>
+<div th:each="image : ${images}">
+    <div th:if="${image.headshot} != null">
+        <img th:src="${image.headshot}" /><hr />
+    </div>
+    <h3 th:text="${image.name}"></h3><h4 th:text="${image.realname}"></h4>
+</div>
 
 <style>
     body {
