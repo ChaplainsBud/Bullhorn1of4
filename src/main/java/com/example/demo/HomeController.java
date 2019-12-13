@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +18,7 @@ public class HomeController {
     MessageRepository messageRepository;
 
     @RequestMapping("/")
-    public String listCourses(Model model){
+    public String homePage(Model model){
         model.addAttribute("messages", messageRepository.findAll());
         return "list";
     }
